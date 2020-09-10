@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Unity函数库</title>
+    <style>
+        body {
+            background: url(../asset/images/background5.jpg)
+        }
+    </style>
+</head>
+<div id="container" style="width:1450px">
+
+    <div id="header" style="background-color:#808080;">
+        <h1 align="right"><a href="../MainPage.html">主页面</a></h1>
+        <h2 style="margin-bottom:0;">Unity函数库</h2>
+    </div>
+
+    <div id="transit" style="background-color:#d1cdcd;height:30px">
+        <p style="margin-top:0;font-size: small;"> <a href="../MainPage.html">主页面</a>->Unity函数库</p>
+    </div>
+
+    <div id="menu" style="background-color:#b3b3b3;width:300px;height:3000px;float:left;">
+        <ol>
+            <li><font size="4">UnityEngine</font></li>
+            <ul>
+                <li>UnityEngine.Accessibility</li>
+                <li>UnityEgnine.AI</li>
+                <li>UnityEngine.Analytics</li>
+            </ul>
+            <li><font size="4">UnityEditor</font></li>
+            <ul>
+                <li>UnityEditor.Advertisements</li>
+                <li>UnityEditor.AI</li>
+                <li>UnityEditor.Analytics</li>
+            </ul>
+            <li><font size="4">Unity</font></li>
+            <ul>
+                <li>Unity.Burst</li>
+                <li>Unity.Collection</li>
+                <li>Unity.Jobs</li>
+            </ul>
+            <li><font size="4">UnityIO.LowLevel</font></li>
+            <ul>
+                <li>Unity.IO.LowLevel.Unsafe</li>
+            </ul>
+            <li><font size="4">UnityEditor.Profiling.Memory</font></li>
+            <ul>
+                UnityEditor.Profiling.Memory</li>
+            </ul>
+            <li><font size="4">Other</font></li>
+            <ul>
+                <li>Classes</li>
+                <li>Enumerations</li>
+            </ul>
+        </ol>
+    </div>
+
+    <div id="content" style="float:left;height:3000px">
+        <b><font size="5">VisionUtility</font></b><br>
+        包含可使用不同视觉功能帮助用户实现可访问性的方法的类。<br>
+        <font size="5">静态函数</font><br>
+        GetColorBlindSafePalette	获取对于正常视力、绿色盲、红色盲和蓝色盲来讲均可辨识的颜色的调色板。<br>
+        <br>
+        <b><font size="5"> NavMesh</font></b><br>
+        用于访问烘焙导航网格的单例类。<br>
+        NavMesh 是一个类，可用于执行空间查询（如寻路和步行性测试）、设置特定区域类型的寻路成本以及调整寻路和规避的整体行为。<br>
+        为了使用空间查询，您需要先为场景烘焙导航网格。<br>
+        <font size="5">静态变量</font><br>
+        AllAreas	包含所有导航网格区域的区域遮罩常量。<br>
+        avoidancePredictionTime	描述代理在未来多久后预测碰撞，以便进行规避。<br>
+        onPreUpdate	设置一个要在执行帧更新期间且在导航网格更新之前调用的函数。<br>
+        pathfindingIterationsPerFrame	异步寻路过程中每帧处理的最大节点数。<br>
+        <font size="5">静态函数</font><br>
+        AddLink	向导航网格添加链接。此链接由 NavMeshLinkData 结构描述。<br>
+        AddNavMeshData	向游戏添加指定的导航网格数据。<br>
+        CalculatePath	计算两点之间的路径并存储生成的路径。<br>
+        CalculateTriangulation	计算当前导航网格的三角形剖分。<br>
+        CreateSettings	创建并返回可用于运行时导航网格构建操作的导航网格构建设置新条目。<br>
+        FindClosestEdge	从导航网格上的一点找到最近的导航网格边缘。<br>
+        GetAreaCost	获取区域类型几何体的寻路成本。<br>
+        GetAreaFromName	返回名为导航网格区域类型的区域索引。<br>
+        GetSettingsByID	返回导航网格构建设置的现有条目。<br>
+        GetSettingsByIndex	按其有序索引返回导航网格构建设置的现有条目。<br>
+        GetSettingsCount	返回已注册的导航网格构建设置的数量。<br>
+        GetSettingsNameFromID	返回与导航网格构建设置（与提供的代理类型 ID 匹配）关联的名称。<br>
+        Raycast	在导航网格上的两点之间找出一条线。<br>
+        RemoveAllNavMeshData	从游戏中删除所有导航网格表面和链接。<br>
+        RemoveLink	从导航网格中删除链接。<br>
+        RemoveNavMeshData	从游戏中删除指定的 NavMeshDataInstance，使其无法用于代理和查询。<br>
+        RemoveSettings	删除与代理类型 ID 匹配的构建设置。<br>
+        SamplePosition	在指定范围内找到导航网格上最近的点。<br>
+        SetAreaCost	设置所有代理上的区域类型几何体的寻路成本。<br>
+        <br>
+        <b><font size="5">NavMeshAgent</font></b><br>
+        导航网格代理。<br>
+        此组件附加到游戏中的某个移动角色，以允许该角色使用导航网格在场景中导航。有关更多详细信息，请参阅本手册的导航部分。<br>
+        <font size="5">静态变量</font><br>
+        acceleration	代理遵循某一路径时的最大加速度，以单位/秒^2 表示。<br>
+        agentTypeID	代理的类型 ID。<br>
+        angularSpeed	遵循路径时的最大回转速度（以 deg/s 为单位）。<br>
+        areaMask	指定哪些导航网格区域可通过。更改 areaMask 将会使该路径过时（请参阅 isPathStale）。<br>
+        autoBraking	代理是否应自动制动以避免越过目标点？<br>
+        <font size="5">静态函数</font><br>
+        Destroy	删除 GameObject、组件或资源。<br>
+        DestroyImmediate	立即销毁对象 /obj/。强烈建议您改用 Destroy。<br>
+        DontDestroyOnLoad	在加载新的 Scene 时，请勿销毁 Object。<br>
+        FindObjectOfType	返回第一个类型为 type 的已加载的激活对象。<br>
+        FindObjectsOfType	返回所有类型为 type 的已加载的激活对象的列表。<br>
+        Instantiate	克隆 original 对象并返回克隆对象。<br>
+        <br>
+        <b><font size="5">NavMeshBuildDebugSettings</font></b><br>
+        指定应在导航网格构建完成后将构建时生成的哪些临时数据保留在内存中。<br>
+        可以在 Editor 中收集并显示使用 NavMeshBuilder 构建导航网格时所用的中间数据。<br>
+        当生成的导航网格形状与预期不符时，这有助于对各种问题进行诊断。<br>
+        <font size="5">静态变量</font><br>
+        flags	指定构建导航网格时应收集哪些类型的调试数据。<br>
+        <br>
+        <b><font size="5">AdvertisementSettings</font></b><br>
+        适用于 Unity 服务编辑器功能的 Editor API。<br>
+        UnityAds 通常从 Services 窗口启用，但如果您要编写自己的编辑器扩展，则可以使用该 API。<br>
+        <font size="5">静态变量</font><br>
+        enabled	用于启用或禁用通告功能的全局布尔值。<br>
+        initializeOnStartup	控制通告系统是否应在启动时立即实施初始化。<br>
+        testMode	控制是否将使用测试通告，而非生产通告。<br>
+        <font size="5">静态函数</font><br>
+        GetGameId	获取针对运行时平台指定的游戏标识符。<br>
+        GetPlatformGameId	获取针对运行时平台指定的游戏标识符。<br>
+        SetGameId	为指定的平台设置游戏标识符。<br>
+        SetPlatformGameId	为指定的平台设置游戏标识符。
+    </div>
+
+    <div id="footer" style="background-color:#000000;clear:both;text-align:center;">
+        <font color="#FFFFFF">联系我们 © 1149932866@qq.com</font>
+    </div>
+
+</div>
+
+</body>
+</html>
